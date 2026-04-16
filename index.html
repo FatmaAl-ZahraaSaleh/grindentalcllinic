@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GRIN Dental Clinic</title>
+
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+/* Reset */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins', sans-serif;
+}
+
+body{
+    background:#000;
+}
+
+/* HERO */
+.hero{
+    position:relative;
+    height:100vh;
+    overflow:hidden;
+}
+
+.hero img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.hero::after{
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.55);
+}
+
+.hero-text{
+    position:absolute;
+    top:50%;
+    left:8%;
+    transform:translateY(-50%);
+    color:#fff;
+    max-width:600px;
+    z-index:2;
+}
+
+.hero-text h1{
+    font-size:60px;
+    font-weight:700;
+    margin-bottom:10px;
+    line-height:1.1;
+    animation:fadeUp 1s ease forwards;
+    font-family: "Playfair Display", serif;
+}
+
+.hero-text p{
+    font-size:16px;
+    margin-bottom:5px;
+    color:#aaa;
+    line-height:1.1;
+    animation:fadeUp 1.3s ease forwards;
+}
+
+@keyframes fadeUp{
+    from{
+        opacity:0;
+        transform:translateY(30px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* SERVICES */
+.services{
+    padding:100px 80px;
+    text-align:center;
+    color:#ffffff;
+}
+
+.services h2{
+    margin-bottom:40px;
+    font-size:36px;
+  font-family: 'Inter', sans-serif;
+}
+/* الكروت */
+.cards1{
+    display:flex;
+    flex-wrap:wrap;
+    gap:25px;
+    justify-content:center;
+}
+
+.card1{
+    flex:1 1 calc(25% - 25px);
+    padding:30px;
+    background:linear-gradient(145deg,#111,#1a1a1a);
+    border-radius:15px;
+    transition:0.4s;
+    position:relative;
+    overflow:hidden;
+    box-shadow:0 10px 25px rgba(0,0,0,0.4);
+
+    opacity:0;
+    transform:translateY(40px);
+    animation:cardFade 0.8s ease forwards;
+}
+
+/* أنيميشن متدرج */
+.card1:nth-child(1){animation-delay:0.1s;}
+.card1:nth-child(2){animation-delay:0.2s;}
+.card1:nth-child(3){animation-delay:0.3s;}
+.card1:nth-child(4){animation-delay:0.4s;}
+.card1:nth-child(5){animation-delay:0.5s;}
+.card1:nth-child(6){animation-delay:0.6s;}
+.card1:nth-child(7){animation-delay:0.7s;}
+.card1:nth-child(8){animation-delay:0.8s;}
+
+@keyframes cardFade{
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* خط متحرك */
+.card1::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:-100%;
+    width:100%;
+    height:3px;
+    background:#c9a96e;
+    transition:0.5s;
+}
+
+.card1:hover::before{
+    left:0;
+}
+
+/* Hover */
+.card1:hover{
+    transform:translateY(-15px) scale(1.03);
+    box-shadow:0 20px 40px rgba(201,169,110,0.3);
+}
+
+.card1 h3{
+    margin-bottom:10px;
+    transition:0.3s;
+}
+
+.card1 p{
+    color:#aaa;
+    transition:0.3s;
+}
+
+.card1:hover h3{
+    color:#c9a96e;
+}
+
+.card1:hover p{
+    color:#fff;
+}
+
+/* ABOUT */
+.about {
+    display:flex;
+    flex-direction:column;
+    gap:50px;
+  background: #111111;
+  padding: 100px 80px;
+}
+
+.about > h2 {
+  color: #ffffff;
+  font-size: 36px;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.card{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:50px;
+    background:linear-gradient(145deg,#111,#1a1a1a);
+    padding:30px;
+    border-radius:15px;
+    transition:0.4s;
+    box-shadow:0 10px 30px rgba(0,0,0,0.4);
+}
+
+.card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 20px 40px rgba(201,169,110,0.3);
+}
+
+.card-content{
+    width:60%;
+    color:#fff;
+}
+
+.card-image img{
+    width:220px;
+    height:220px;
+    object-fit:cover;
+    border-radius:50%;
+    border:4px solid #c9a96e;
+    transition:0.4s;
+}
+
+.card:hover img{
+    transform:scale(1.05);
+}
+
+/* =========================
+   LINKS SECTION STYLES
+========================= */
+.links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+
+    padding: 70px 40px;
+    background: #1111;
+}
+
+/* =========================
+   LINKS GRID
+========================= */
+
+.links {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+
+    padding: 70px 40px;
+    background: #1111;
+
+    perspective: 1000px; /* مهم للـ 3D */
+}
+
+/* =========================
+   LINK CARD
+========================= */
+
+.links .link-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    text-decoration: none;
+    color: #fff;
+
+    padding: 22px;
+    border-radius: 16px;
+
+    font-size: 16px;
+    font-weight: 500;
+
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    backdrop-filter: blur(10px);
+
+    transition: all 0.4s ease;
+    transform-style: preserve-3d;
+
+    transform: translateY(20px);
+    opacity: 0;
+
+    animation: fadeUp 0.7s ease forwards;
+}
+
+/* =========================
+   3D HOVER EFFECT
+========================= */
+
+.links .link-box:hover {
+    transform: translateY(-12px) rotateX(10deg) rotateY(-10deg) scale(1.05);
+    box-shadow: 0 25px 50px rgba(0,0,0,0.6);
+}
+
+/* =========================
+   ICON STYLE + ANIMATION
+========================= */
+
+.links .link-box i {
+    font-size: 26px;
+    transition: all 0.4s ease;
+}
+
+/* Icon hover animation */
+.links .link-box:hover i {
+    transform: translateY(-6px) scale(1.25) rotate(10deg);
+    animation: iconBounce 0.6s ease;
+}
+
+/* =========================
+   ICON BOUNCE ANIMATION
+========================= */
+
+@keyframes iconBounce {
+    0%   { transform: translateY(0) scale(1); }
+    50%  { transform: translateY(-10px) scale(1.3) rotate(10deg); }
+    100% { transform: translateY(-6px) scale(1.25) rotate(10deg); }
+}
+
+/* =========================
+   CARD ANIMATION
+========================= */
+
+@keyframes fadeUp {
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* =========================
+   PLATFORM COLORS
+========================= */
+
+.links .link-box:nth-child(1):hover { background: #facc15; color:#000; }
+.links .link-box:nth-child(2):hover { background: #1877f2; }
+.links .link-box:nth-child(3):hover { background: #e1306c; }
+.links .link-box:nth-child(4):hover { background: #000; }
+.links .link-box:nth-child(5):hover { background: #ff0000; }
+.links .link-box:nth-child(6):hover { background: #3b82f6; }
+.links .link-box:nth-child(7):hover { background: #25D366; }
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 1024px) {
+    .links {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .links {
+        grid-template-columns: repeat(1, 1fr);
+        padding: 40px 15px;
+    }
+}
+/* FOOTER */
+footer{
+    background:#000;
+    color:#fff;
+    text-align:center;
+    padding:20px;
+}
+
+/* RESPONSIVE */
+@media(max-width:1024px){
+    .card1{
+        flex:1 1 calc(50% - 25px);
+    }
+}
+
+@media(max-width:768px){
+    .hero-text{
+        left:5%;
+        right:5%;
+    }
+
+    .hero-text h1{
+        font-size:35px;
+    }
+
+    .hero-text p{
+        font-size:15px;
+    }
+
+    .card{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .card-content{
+        width:100%;
+    }
+}
+
+@media(max-width:600px){
+    .card1{
+        flex:1 1 100%;
+    }
+
+    .services,
+    .about,
+    .contact{
+        padding:60px 20px;
+    }
+
+    .card-image img{
+        margin-top:20px;
+    }
+}
+</style>
+
+</head>
+<body>
+<body>
+
+<!-- Hero -->
+<section class="hero">
+    <img src="WhatsApp Image 2026-04-14 at 6.08.32 AM.jpeg" alt="clinic">
+
+    <div class="hero-text">
+        <h1>Keep Your Smile Healthy</h1>
+        <p>Best dental care for you</p>
+        <p>تهدف عيادتنا ومؤسسها الدكتور محمد مجدي وشريكه الدكتور عمر القصاص و فريقهم الطبي المتخصيص الي توفير العناية المتكاملة لصحة الفم و الأسنان و امراض اللثه</p>
+        <p>اولوياتنا القصوي هي تقديم خدمة مميزة و نتائج علاجية مثاليه بتجربة فريده</p>
+        <p>يتم التعامل مع كل مريض علي حدي لرسم ابتسامته التي يطمح لها هو او عائلته</p>
+        <p>نحنو نهتم بتوفير خدمة احترافية لكم علي مدار 24/7</p>
+    </div>
+</section>
+
+<!-- Services -->
+<section class="services">
+    <h2>Our Dental Services</h2>
+
+    <div class="cards1">
+        <div class="card1">
+            <h3>Emergency Dental Care</h3>
+            <p>الطوارئ</p>
+        </div>
+
+        <div class="card1">
+            <h3>Teeth Cleaning & Scaling</h3>
+            <p>تنظيف وإزالة الجير و تبييض الأسنان</p>
+        </div>
+
+        <div class="card1">
+            <h3>Dental Fillings</h3>
+            <p>حشوات الأسنان</p>
+        </div>
+
+        <div class="card1">
+            <h3>Root Canal Treatment</h3>
+            <h3>(Endodontics)</h3>
+            <p>علاج العصب</p>
+        </div>
+
+        <div class="card1">
+            <h3>Tooth Extraction</h3>
+            <p>خلع الأسنان</p>
+        </div>
+
+        <div class="card1">
+            <h3>Teeth Whitening</h3>
+            <p>تبييض الأسنان</p>
+        </div>
+
+        <div class="card1">
+            <h3>Orthodontics</h3>
+            <h3>(Braces & Invisalign)</h3>
+            <p>تقويم الأسنان</p>
+        </div>
+
+        <div class="card1">
+            <h3>Veneers & Smile Makeover</h3>
+            <p>الفينير وتصميم الابتسامة</p>
+        </div>
+
+        <div class="card1">
+            <h3>Dental Implants</h3>
+            <p>زراعة الأسنان</p>
+        </div>
+
+        <div class="card1">
+            <h3>Gum Disease Treatment</h3>
+            <p>علاج اللثة</p>
+        </div>
+
+        <div class="card1">
+            <h3>Pediatric Dentistry</h3>
+            <p>طب أسنان الأطفال</p>
+        </div>
+
+        <div class="card1">
+            <h3>Oral Surgery</h3>
+            <p>جراحة الفم والفك</p>
+        </div>
+    </div>
+</section>
+
+<!-- About -->
+<section class="about">
+    <h2>GRIN Clinic Partners</h2>
+
+    <div class="card">
+        <div class="card-content">
+            <h2>Dr.Omar El-Kassas</h2>
+            <p>Extensive experience in orthodontics</p>
+            <p>Holds multiple specialized certifications in the field of orthodontics.</p>
+            <p>Currently preparing to obtain the British Fellowship in Orthodontics.</p>
+        </div>
+
+        <div class="card-image">
+            <img src="WhatsApp Image 2026-04-14 at 8.37.15 AM.jpeg" alt="profile">
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-content">
+            <h2>Dr.Mohammed Magdy</h2>
+            <p>Fellow of the American University in Cosmetic Dentistry.</p>
+            <p>Holds an experience certificate from the University of Leeds (UK).</p>
+        </div>
+
+        <div class="card-image">
+            <img src="WhatsApp Image 2026-04-14 at 8.37.23 AM.jpeg" alt="profile">
+        </div>
+    </div>
+
+</section>
+
+<!-- LINKS -->
+  <section class="links">
+
+    <a href="https://g.page/r/your-review-link" target="_blank" class="link-box">
+        <i class="fa-solid fa-star"></i>
+        <span>Google Reviews</span>
+    </a>
+
+    <a href="https://facebook.com" target="_blank" class="link-box">
+        <i class="fa-brands fa-facebook-f"></i>
+        <span>Facebook</span>
+    </a>
+
+    <a href="https://instagram.com" target="_blank" class="link-box">
+        <i class="fa-brands fa-instagram"></i>
+        <span>Instagram</span>
+    </a>
+
+    <a href="https://tiktok.com" target="_blank" class="link-box">
+        <i class="fa-brands fa-tiktok"></i>
+        <span>TikTok</span>
+    </a>
+
+    <a href="https://youtube.com" target="_blank" class="link-box">
+        <i class="fa-brands fa-youtube"></i>
+        <span>YouTube</span>
+    </a>
+
+    <a href="https://maps.google.com" target="_blank" class="link-box">
+        <i class="fa-solid fa-location-dot"></i>
+        <span>Location</span>
+    </a>
+
+    <a href="tel:+201234567890" class="link-box">
+    <i class="fa-solid fa-phone"></i>
+    <span>Call Now</span>
+     </a>
+
+    <a href="https://wa.me/201234567890" target="_blank" class="link-box">
+        <i class="fa-brands fa-whatsapp"></i>
+        <span>WhatsApp</span>
+    </a>
+</section>
+
+<!-- Footer -->
+<footer>
+    <p>© 2026 GRIN Dental Clinic</p>
+</footer>
+
+</body>
+</html>
